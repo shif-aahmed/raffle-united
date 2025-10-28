@@ -1,0 +1,433 @@
+/* Navbar Container */
+.navbar {
+  background-color: white;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  margin: 0 auto;
+}
+
+/* Top Bar */
+.navbar::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background-color: #2D5016;
+  width: 100%;
+}
+
+.navbar-container {
+  margin: 0 auto;
+  width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  gap: 40px;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Hide navigation links on mobile */
+@media (max-width: 992px) {
+  .navbar-links {
+    display: none;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-link:hover {
+  color: #FFC516;
+}
+
+.nav-link.active {
+  color: #FFC516;
+}
+
+/* Dropdown */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-container:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
+  min-width: 200px;
+  z-index: 1001;
+  margin-top: 8px;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #FFC516;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Shopping Cart */
+.cart-container {
+  position: relative;
+}
+
+.cart-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.cart-icon {
+  position: relative;
+  color: #FFC516;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  transform: scale(1.2);
+}
+
+.cart-icon:hover {
+  color: #333;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #FFC516;
+  color: black;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.cart-container:hover .cart-badge {
+  background-color: black;
+  color: white;
+}
+
+/* Buttons */
+.navbar-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Hide desktop buttons on mobile */
+@media (max-width: 992px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+.btn-login,
+.btn-register {
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-text {
+  display: inline;
+  transition: opacity 0.3s ease;
+}
+
+.btn-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+/* Show icons on screens 1050px and smaller */
+@media (max-width: 1050px) {
+  .btn-login,
+  .btn-register {
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-text {
+    display: none;
+  }
+  
+  .btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+}
+
+.btn-login {
+  background-color: white;
+  color: #333;
+}
+
+.btn-login:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.btn-register {
+  background-color: #FFC516;
+  color: black;
+  border: none;
+}
+
+.btn-register:hover {
+  background-color: #E6B100;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  margin: 2px 0;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover .hamburger-line {
+  background-color: #FFC516;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu-content {
+  padding: 20px;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 15px 0;
+  color: #333;
+  text-decoration: none;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #FFC516;
+}
+
+.mobile-dropdown {
+  position: relative;
+}
+
+.mobile-dropdown-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-dropdown-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+}
+
+.mobile-dropdown-menu {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.mobile-dropdown-item {
+  display: block;
+  padding: 10px 0;
+  color: #666;
+  text-decoration: none;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.mobile-dropdown-item:hover {
+  color: #FFC516;
+}
+
+.mobile-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.mobile-btn {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-container {
+    height: 60px;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 15px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+
+  .logo-image {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .logo-image {
+    height: 30px;
+  }
+
+  .cart-badge {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+  }
+
+  .mobile-menu-content {
+    padding: 15px;
+  }
+
+  .mobile-nav-link {
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}

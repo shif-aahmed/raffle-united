@@ -1,0 +1,169 @@
+.prev-section {
+  background-color: #f9f9f9;
+  padding: 80px 20px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.prev-section2 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prev-heading {
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: left;
+  color: #000;
+  margin-bottom: 60px;
+}
+
+/* === GRID LAYOUT === */
+.prev-winners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  justify-content: center;
+  gap: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === CARD STYLING === */
+.prev-winner-card {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prev-winner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.prev-img-container{
+  width:13rem;
+  height: 13rem;
+  object-fit:cover;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prev-winner-img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.prev-winner-info {
+  padding: 20px;
+  flex: 1;
+  text-align: left;
+}
+
+.prev-winner-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+.prev-winner-name {
+  color: #ffc516;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.prev-winner-location {
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 4px;
+}
+
+.prev-winner-date {
+  color: #000;
+  font-size: 14px;
+}
+
+.divider {
+  margin: 40px auto;
+  width: 70%;
+  border: none;
+  border-top: 1px solid #727272;
+}
+
+/* === RESPONSIVE STYLES === */
+
+/* For tablets (below 992px) */
+@media (max-width: 992px) {
+  .prev-heading {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .prev-winners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+  }
+
+  .prev-winner-card {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .prev-winner-img {
+    width: 100%;
+    height: 220px;
+    border-radius: 0;
+  }
+
+  .prev-winner-info {
+    padding: 16px;
+  }
+}
+
+/* For mobile screens (below 600px) */
+@media (max-width: 600px) {
+  .prev-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .prev-winners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .prev-winner-card {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .prev-winner-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .prev-winner-info {
+    text-align: center;
+    padding: 15px;
+  }
+
+  .prev-winner-title {
+    font-size: 15px;
+  }
+
+  .divider {
+    width: 85%;
+  }
+}

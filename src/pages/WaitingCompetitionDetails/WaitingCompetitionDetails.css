@@ -1,0 +1,124 @@
+/* Page base */
+.waiting-details-page {
+    background-color: #f9f3e6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 80px 0;
+    font-family: "Poppins", sans-serif;
+    color: #111;
+  }
+  
+  /* Outer wrapper */
+  .waiting-details-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    max-width: 1300px;
+    width: 90%;
+    background: none;
+  }
+  
+  /* LEFT SIDE IMAGE */
+  .waiting-details-image-box {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .waiting-details-img {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* The “316 Left” yellow bar */
+  .waiting-left-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #f7b500;
+    color: white;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  /* RIGHT SIDE CONTENT */
+  .waiting-details-info {
+    flex: 1;
+    padding-top: 20px;
+    max-width: 600px;
+  }
+  
+  /* Title */
+  .waiting-details-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  /* Price (gold) */
+  .waiting-details-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f7b500;
+    margin-bottom: 25px;
+  }
+  
+  /* Description */
+  .waiting-details-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 25px;
+  }
+  
+  /* Note / Tickets Sold */
+  .waiting-details-note {
+    font-size: 1rem;
+    color: #111;
+    margin-bottom: 25px;
+  }
+  
+  .waiting-details-note strong {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  
+  /* Footer note */
+  .waiting-details-footer h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  
+  .waiting-details-footer p {
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .waiting-link {
+    color: #f7b500;
+    text-decoration: underline;
+    font-weight: 500;
+  }
+  
+  /* Back button */
+  .waiting-back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .waiting-back-btn:hover {
+    color: #f7b500;
+  }
+  

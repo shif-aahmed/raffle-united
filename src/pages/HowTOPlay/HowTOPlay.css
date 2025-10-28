@@ -1,0 +1,151 @@
+.how-to-play {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden !important;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Grey background layer */
+  .how-to-play-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(66, 66, 66);
+    z-index: 1;
+  }
+  
+  /* Heading on top of background */
+  .how-to-play-heading {
+    position: relative;
+    bottom: 4rem;
+    z-index: 3;
+    color: white;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    padding: 0 20px;
+    word-wrap: break-word;
+  }
+  
+  /* Wave at bottom */
+  .how-to-play-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+  
+  .how-to-play-wave-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* ✅ Simple text layout below wave */
+  .how-to-play-bottom {
+    background-color: #f5f5f5;
+    padding: 60px 40px;
+  }
+  
+  .how-to-play-columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .how-to-play-column {
+    flex: 1 1 300px;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .how-to-play-column h2 {
+    color: #222;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: left ;
+  }
+  
+  .how-to-play-column ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .how-to-play-column li {
+    color: #222;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  
+  /* ✅ Responsive design */
+  
+  /* Tablets */
+  @media (max-width: 992px) {
+    .how-to-play {
+      height: 350px;
+    }
+  
+    .how-to-play-heading {
+      font-size: 2.8rem;
+      bottom: 3rem;
+    }
+  }
+  
+  /* Large Mobile */
+  @media (max-width: 768px) {
+    .how-to-play {
+      height: 300px;
+    }
+  
+    .how-to-play-heading {
+      font-size: 2.2rem;
+      bottom: 2rem;
+    }
+  
+    .how-to-play-columns {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .how-to-play-column {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+  
+  /* Small Mobile */
+  @media (max-width: 480px) {
+    .how-to-play {
+      height: 260px;
+    }
+  
+    .how-to-play-heading {
+      font-size: 1.8rem;
+      bottom: 1.5rem;
+    }
+  
+    .how-to-play-column h2 {
+      font-size: 1.2rem;
+    }
+  
+    .how-to-play-column li {
+      font-size: 0.95rem;
+    }
+  }
+  

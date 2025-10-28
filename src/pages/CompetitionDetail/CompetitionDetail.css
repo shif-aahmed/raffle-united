@@ -1,0 +1,108 @@
+.competition-detail {
+    background-color: #f8f1d6;
+    padding: 60px 20px;
+    min-height: 100vh;
+  }
+  
+  .detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+  }
+  
+  .detail-image {
+    flex: 1 1 400px;
+    position: relative;
+  }
+  
+  .detail-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .ticket-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ffc516;
+    color: black;
+    font-weight: 600;
+    padding: 8px 16px;
+  }
+  
+  .detail-info {
+    flex: 1 1 500px;
+  }
+  
+  .detail-title {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .detail-price {
+    font-size: 24px;
+    color: #ffc516;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .detail-description {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    white-space: pre-line;
+  }
+  
+  .winner-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .winner-table th,
+  .winner-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .winner-table th {
+    background-color: #f0f0f0;
+  }
+  
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .back-btn:hover {
+    color: rgb(51, 51, 51)
+  };
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .detail-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .detail-info {
+      margin-top: 20px;
+    }
+  
+    .winner-table th,
+    .winner-table td {
+      font-size: 14px;
+    }
+  }
+  

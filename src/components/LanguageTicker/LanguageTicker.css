@@ -1,0 +1,69 @@
+#lang-slider {
+  --gap: 26px;
+  --speed: 10s !important; /* slower scroll */
+  position: relative;
+  overflow: hidden;
+  display: block;
+  padding: 12px 0;
+  background-color: #f8f8f8;
+  width: 100%;
+  perspective: 800px; /* for 3D tilt effect */
+}
+
+#lang-slider::before,
+#lang-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#lang-slider::before {
+  left: 0;
+}
+
+#lang-slider::after {
+  right: 0;
+}
+
+#lang-slider .track {
+  display: inline-flex;
+  gap: var(--gap);
+  white-space: nowrap;
+  will-change: transform;
+  animation: slide-ltr var(--speed) linear infinite; /* move left → right */
+  align-items: center;
+}
+
+#lang-slider .item {
+  padding: 10px 16px;
+  border-radius: 25px;
+  color: #000000;
+  font: 600 14px/1.1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-size: 300% 300%;
+  animation: gradientShift 5s ease infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+
+/* Slide animation: left to right */
+@keyframes slide-ltr {
+  from { transform: translateX(calc(-50%)); }
+  to { transform: translateX(0); }
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pause animation on hover */
+#lang-slider:hover .track {
+  animation-play-state: paused;
+}

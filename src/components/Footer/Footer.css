@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Footer Styles */
+.footer {
+  background-color: #333333;
+  color: #CCCCCC;
+  margin-top: auto;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  bottom: 0 !important;
+}
+
+.footer-main {
+    display: flex;
+    padding: 50px 250px 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 0;
+  font-family: 'Quicksand', sans-serif;
+  padding-left: 0;
+  text-align: left;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.4;
+}
+
+.payment-methods {
+  margin-bottom: 35px;
+}
+
+.visa-logo, .mastercard-logo {
+  display: inline-block;
+  background: #ffffff;
+  color: #000;
+  padding: 6px 10px;
+  margin-right: 8px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 11px;
+  font-family: 'Quicksand', sans-serif;
+  vertical-align: middle;
+}
+
+.visa-logo {
+  background: #1a1f71;
+  color: #ffffff;
+  padding: 6px 12px;
+}
+
+.mastercard-logo {
+  background: #eb001b;
+  color: #ffffff;
+  padding: 6px 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.social-icon.instagram::before {
+  content: "";
+  background-image: url('../../assets/instagram.png');
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.social-icon:hover {
+  background-color: #FFD700;
+  color: #333;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.social-icon.instagram:hover::before {
+  color: #333;
+}
+
+.footer-text p {
+  color: #AAAAAA;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer-bottom {
+  background-color: #222222;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-bottom-left p {
+  color: #CCCCCC;
+  font-size: 13px;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.footer-bottom-right {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom-right a {
+  color: #CCCCCC;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Responsive Design */
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+  .footer-main {
+    padding: 40px 50px 30px 50px;
+    gap: 40px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 30px 30px 30px;
+  }
+  
+  .footer-column {
+    text-align: center;
+  }
+  
+  .footer-column h3 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .footer-links {
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 30px;
+  }
+  
+  .footer-bottom-right {
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 30px 20px 20px 20px;
+    gap: 25px;
+  }
+  
+  .footer-column h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    font-size: 13px;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .payment-methods {
+    margin-bottom: 25px;
+  }
+  
+  .visa-logo, .mastercard-logo {
+    font-size: 10px;
+    padding: 5px 8px;
+    margin-right: 6px;
+  }
+  
+  .social-icons {
+    gap: 6px;
+  }
+  
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .social-icon.instagram::before {
+    font-size: 16px;
+  }
+  
+  .footer-text p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    padding: 15px 20px;
+  }
+  
+  .footer-bottom-left p {
+    font-size: 12px;
+  }
+  
+  .footer-bottom-right {
+    gap: 15px;
+    flex-direction: column;
+  }
+  
+  .footer-bottom-right a {
+    font-size: 12px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 360px) {
+  .footer-main {
+    padding: 25px 15px 15px 15px;
+    gap: 20px;
+  }
+  
+  .footer-column h3 {
+    font-size: 14px;
+  }
+  
+  .footer-links a {
+    font-size: 12px;
+  }
+  
+  .visa-logo, .mastercard-logo {
+    font-size: 9px;
+    padding: 4px 6px;
+    margin-right: 4px;
+  }
+  
+  .social-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  
+  .footer-text p {
+    font-size: 11px;
+  }
+  
+  .footer-bottom-left p {
+    font-size: 11px;
+  }
+  
+  .footer-bottom-right a {
+    font-size: 11px;
+  }
+}

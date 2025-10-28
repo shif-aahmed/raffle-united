@@ -1,0 +1,161 @@
+.competitions-grid {
+    background-color: #f5f5f5;
+  }
+  
+  .competitions-grid-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 20px;
+    justify-items: center;
+  }
+  
+  .competition-card {
+    background-color: #ebebeb;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 360px;
+    height: 560px;
+    text-decoration: none;
+  }
+ 
+  
+  .card-image {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
+  
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 14px !important;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #FFC516;
+    margin: 12px 10px;
+    font-family: 'Quicksand', sans-serif;
+
+  }
+  
+  .finish-divider {
+    margin: 20px auto;
+    width: 70%;
+    border: none;
+    border-top: 1px solid #727272;
+  }
+  
+  .card-status {
+    font-size: 14px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .competition-card-link {
+    text-decoration: none;   /* removes underline */
+    color: inherit;          /* keeps original text color */
+  }
+  
+  .competition-card-link:hover {
+    text-decoration: none;   /* prevent underline on hover too */
+  }
+  
+  .card-status img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .card-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffc516;
+    margin-bottom: 20px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 0;
+  }
+  
+  /* ✅ RESPONSIVENESS */
+  
+  /* Large screens (default 3 cards) */
+  
+  /* Tablets (2 cards per row) */
+  @media (max-width: 1024px) {
+    .competitions-grid-inner {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  
+    .competition-card {
+      max-width: 340px;
+      height: 520px;
+    }
+  
+    .card-image {
+      height: 300px;
+    }
+  }
+  
+  /* Mobile (1 card per row) */
+  @media (max-width: 768px) {
+    .competitions-grid-inner {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 40px 16px;
+    }
+  
+    .competition-card {
+      max-width: 400px;
+      height: auto;
+    }
+  
+    .card-image {
+      height: 240px;
+    }
+  
+    .card-title {
+      font-size: 18px;
+    }
+  
+    .card-price {
+      font-size: 2.2rem;
+    }
+  }
+  
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .competitions-grid-inner {
+      padding: 30px 10px;
+    }
+  
+    .competition-card {
+      max-width: 100%;
+    }
+  
+    .card-image {
+      height: 200px;
+      padding: 8px;
+    }
+  
+    .card-title {
+      font-size: 16px;
+    }
+  
+    .card-price {
+      font-size: 1.8rem;
+    }
+  }
+  
