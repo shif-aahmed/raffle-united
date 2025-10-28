@@ -23,21 +23,22 @@ const CompetitionsAndHowToPlay = () => {
             <h3 className="home-waiting-card-title">Celtic FC vs SC Braga Tickets</h3>
             <div className="home-waiting-divider"></div>
             <p className="home-waiting-card-price">£2.50</p>
-            <Link
-              to="/waiting"
-              state={{
-                competition: {
-                  image:{live},
-                  title: "Celtic FC vs SC Braga Tickets",
-                  price: "£2.50",
-                  status: "Open",
-                  description:
-                    "Win VIP tickets to watch Celtic FC take on SC Braga live! Enjoy premium seating and an unforgettable football night.",
-                },
-              }}
-            >
-              <button className="home-waiting-view-btn">View Entries</button>
-            </Link>
+      <Link
+  to="/waiting"
+  state={{
+    competition: {
+      image: live,  // ✅ Correct way
+      title: "Celtic FC vs SC Braga Tickets",
+      price: "£2.50",
+      status: "Open",
+      description:
+        "Win VIP tickets to watch Celtic FC take on SC Braga live! Enjoy premium seating and an unforgettable football night.",
+    },
+  }}
+>
+  <button className="home-waiting-view-btn">View Entries</button>
+</Link>
+
           </div>  
           </div>
         </div>
