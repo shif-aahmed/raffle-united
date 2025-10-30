@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,18 +9,19 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Home</h3>
           <ul className="footer-links">
-            <li><a href="#competitions">Competitions</a></li>
-            <li><a href="#how-to-play">How to Play</a></li>
-            <li><a href="#winners">Winners</a></li>
+            <li><a href="/live-competition">Competitions</a></li>
+            <li><a href="/how-to-play">How to Play</a></li>
+            <li><a href="/previous-winners">Winners</a></li>
           </ul>
         </div>
         
         <div className="footer-column">
-          <h3>About</h3>
+          <h3><Link to="/about" style={{ color: '#fff', textDecoration: 'none' }}>About</Link></h3>
           <ul className="footer-links">
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#faqs">FAQs</a></li>
-            <li><a href="#login">Login</a></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/faqs">FAQs</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
         </div>
         
@@ -39,7 +41,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-column">
-          <h3>About</h3>
+          <h3><Link to="/about" style={{ color: '#fff', textDecoration: 'none' }}>About</Link></h3>
           <div className="footer-text">
             <p>Players must be over 18 years of age.</p>
             <p>If you win and you are under 18 then you will not be able to collect the prize and the competition will be drawn again.</p>

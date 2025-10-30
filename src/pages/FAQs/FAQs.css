@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.faqs-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.faqs-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden !important;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqs-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(66, 66, 66);
+  z-index: 1;
+}
+
+.faqs-title {
+  position: relative;
+  bottom: 4rem;
+  z-index: 3;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.faqs-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.faqs-wave-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.faqs-content {
+  flex: 1;
+  background-color: #f8f8f8;
+  padding: 40px 20px 80px;
+}
+
+.faqs-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 8px;
+}
+
+.faq-question {
+  width: 100%;
+  background-color: #f5f5f5;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 18px 24px;
+  text-align: left;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #FFC516;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  min-height: 56px;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+  border-color: #FFC516;
+}
+
+.faq-question.active {
+  background-color: #ffffff;
+  border-color: #FFC516;
+  color: #FFC516;
+  font-weight: 600;
+}
+
+.faq-chevron {
+  color: #FFC516;
+  font-size: 12px;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  margin-left: 12px;
+}
+
+.faq-answer {
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 24px;
+  margin-top: -1px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  color: #FFC516;
+  line-height: 1.5;
+}
+
+.faq-answer-list {
+  margin: 0;
+  padding-left: 16px;
+  color: var(--primary-color);
+}
+
+.faq-answer-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .faqs-title { font-size: 2.2rem; bottom: 2rem; }
+}
+
+
+/* Extra four boxes were removed */
+

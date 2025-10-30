@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import React, { useEffect, useLayoutEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home'
 import PreviousWinners from './pages/PreviousWinners/PreviousWinners'
@@ -15,11 +15,26 @@ import Footer from './components/Footer/Footer'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import Cart from './pages/Cart/Cart'
+import FAQs from './pages/FAQs/FAQs'
+import About from './pages/About/About'
+import Contact from './pages/Contact/Contact'
 import './App.css'
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useLayoutEffect(() => {
+    // Reset all common scroll containers
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    if (document.documentElement) document.documentElement.scrollTop = 0;
+    if (document.body) document.body.scrollTop = 0;
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <LanguageTicker />
       <Navbar />
       <Routes>
@@ -37,6 +52,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/faqs" element={<FAQs />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

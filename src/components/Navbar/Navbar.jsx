@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 
@@ -42,35 +42,36 @@ const Navbar = ({ onNavigate }) => {
 
         {/* Navigation Links */}
         <div className="navbar-links">
-          <Link to="/" className="nav-link active">Home</Link>
+          <NavLink to="/" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Home</NavLink>
           <div 
             className="dropdown-container"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <Link 
+            <button
               className="nav-link dropdown-trigger"
+              type="button"
             >
               Competitions
               <span className="dropdown-arrow">▼</span>
-            </Link>
+            </button>
             {isCompetitionsOpen && (
               <div className="dropdown-menu">
-                <Link to="/live-competition" className="dropdown-item">Live Competitions</Link>
-                <Link to="/waiting-to-be-drawn" className="dropdown-item">Waiting to be Drawn</Link>
-                <Link to="/finished-competition" className="dropdown-item">Finished Competitions</Link>
+                <NavLink to="/live-competition" className={({ isActive }) => `dropdown-item${isActive ? ' active' : ''}`}>Live Competitions</NavLink>
+                <NavLink to="/waiting-to-be-drawn" className={({ isActive }) => `dropdown-item${isActive ? ' active' : ''}`}>Waiting to be Drawn</NavLink>
+                <NavLink to="/finished-competition" className={({ isActive }) => `dropdown-item${isActive ? ' active' : ''}`}>Finished Competitions</NavLink>
               </div>
             )}
           </div>
-          <Link to="/how-to-play" className="nav-link">How to Play</Link>
-          <Link to="/previous-winners" className="nav-link">Winners</Link>
+          <NavLink to="/how-to-play" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>How to Play</NavLink>
+          <NavLink to="/previous-winners" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Winners</NavLink>
         </div>
 
         {/* Right Section - Cart and Mobile Menu */}
         <div className="navbar-right">
           {/* Shopping Cart */}
           <div className="cart-container">
-            <Link to="/cart" className="cart-link">
+            <NavLink to="/cart" className="cart-link">
               <div className="cart-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <circle cx="9" cy="21" r="1"></circle>
@@ -79,7 +80,7 @@ const Navbar = ({ onNavigate }) => {
                 </svg>
                 <div className="cart-badge">0</div>
               </div>
-            </Link>
+            </NavLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,7 +92,7 @@ const Navbar = ({ onNavigate }) => {
 
           {/* Desktop Buttons */}
           <div className="navbar-buttons desktop-only">
-            <Link to="/login" className="btn-login">
+            <NavLink to="/login" className="btn-login">
               <span className="btn-text">Login</span>
               <span className="btn-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -100,8 +101,8 @@ const Navbar = ({ onNavigate }) => {
                   <line x1="15" y1="12" x2="3" y2="12"></line>
                 </svg>
               </span>
-            </Link>
-            <Link to="/register" className="btn-register">
+            </NavLink>
+            <NavLink to="/register" className="btn-register">
               <span className="btn-text">Register</span>
               <span className="btn-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -111,7 +112,7 @@ const Navbar = ({ onNavigate }) => {
                   <line x1="23" y1="11" x2="17" y2="11"></line>
                 </svg>
               </span>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -119,12 +120,12 @@ const Navbar = ({ onNavigate }) => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
           <div className="mobile-menu-content">
-            <Link to="/" className="mobile-nav-link">Home</Link>
+            <NavLink to="/" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>Home</NavLink>
             <div className="mobile-dropdown">
-              <Link 
+              <button
                 className="mobile-nav-link dropdown-trigger"
+                type="button"
                 onClick={(e) => {
-                  e.preventDefault();
                   toggleMobileCompetitions();
                 }}
               >
@@ -132,20 +133,20 @@ const Navbar = ({ onNavigate }) => {
                 <span className="mobile-dropdown-arrow">
                   {isMobileCompetitionsOpen ? '▲' : '▼'}
                 </span>
-              </Link>
+              </button>
               {isMobileCompetitionsOpen && (
                 <div className="mobile-dropdown-menu">
-                  <Link to="/live-competition" className="mobile-dropdown-item">Live Competitions</Link>
-                  <Link to="/waiting-to-be-drawn" className="mobile-dropdown-item">Waiting to be Drawn</Link>
-                  <Link to="/finished-competition" className="mobile-dropdown-item">Finished Competitions</Link>
+                  <NavLink to="/live-competition" className={({ isActive }) => `mobile-dropdown-item${isActive ? ' active' : ''}`}>Live Competitions</NavLink>
+                  <NavLink to="/waiting-to-be-drawn" className={({ isActive }) => `mobile-dropdown-item${isActive ? ' active' : ''}`}>Waiting to be Drawn</NavLink>
+                  <NavLink to="/finished-competition" className={({ isActive }) => `mobile-dropdown-item${isActive ? ' active' : ''}`}>Finished Competitions</NavLink>
                 </div>
               )}
             </div>
-            <Link to="/how-to-play" className="mobile-nav-link">How to Play</Link>
-            <Link to="/previous-winners" className="mobile-nav-link">Winners</Link>
+            <NavLink to="/how-to-play" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>How to Play</NavLink>
+            <NavLink to="/previous-winners" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>Winners</NavLink>
             <div className="mobile-buttons">
-              <Link to="/login" className="btn-login mobile-btn">Login</Link>
-              <Link to="/register" className="btn-register mobile-btn">Register</Link>
+              <NavLink to="/login" className="btn-login mobile-btn">Login</NavLink>
+              <NavLink to="/register" className="btn-register mobile-btn">Register</NavLink>
             </div>
           </div>
         </div>

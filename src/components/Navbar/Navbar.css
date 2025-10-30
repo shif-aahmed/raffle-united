@@ -79,7 +79,19 @@
 }
 
 .dropdown-trigger {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 18px;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  font-weight: 600;
+  gap: 5px;
 }
 
 .dropdown-arrow {
@@ -89,6 +101,10 @@
 
 .dropdown-container:hover .dropdown-arrow {
   transform: rotate(180deg);
+}
+
+.dropdown-trigger:hover {
+  color: #FFC516;
 }
 
 .dropdown-menu {
@@ -118,6 +134,11 @@
 .dropdown-item:hover {
   background-color: #f8f9fa;
   color: #FFC516;
+}
+
+.dropdown-item.active {
+  color: #FFC516;
+  background-color: #fff9e0;
 }
 
 /* Right Section */
@@ -327,6 +348,10 @@
   color: #FFC516;
 }
 
+.mobile-nav-link.active {
+  color: #FFC516;
+}
+
 .mobile-dropdown {
   position: relative;
 }
@@ -335,6 +360,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* Button used as a nav link in mobile menu */
+.mobile-nav-link.dropdown-trigger {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 15px 0;
 }
 
 .mobile-dropdown-arrow {
@@ -359,6 +393,10 @@
 }
 
 .mobile-dropdown-item:hover {
+  color: #FFC516;
+}
+
+.mobile-dropdown-item.active {
   color: #FFC516;
 }
 

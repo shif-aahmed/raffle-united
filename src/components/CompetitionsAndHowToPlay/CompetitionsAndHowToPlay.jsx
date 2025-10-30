@@ -5,6 +5,7 @@ import icon2 from '../../assets/icon2.svg';
 import icon3 from '../../assets/icon3.svg';
 import live from "../../assets/image1.jpeg";
 import { Link } from 'react-router-dom';
+import WinnerPicks from '../WinnerPicks/WinnerPicks';
 
 
 const CompetitionsAndHowToPlay = () => {
@@ -42,6 +43,10 @@ const CompetitionsAndHowToPlay = () => {
           </div>  
           </div>
         </div>
+        
+        {/* Winner Picks Section */}
+        <WinnerPicks />
+        
         <button
           className="home-more-competitions-btn"
           onClick={() => (window.location.href = '/live-competition')}
