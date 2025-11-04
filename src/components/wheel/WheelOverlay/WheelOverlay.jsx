@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './WheelOverlay.css';
 
 const WheelOverlay = ({
@@ -30,6 +30,28 @@ const WheelOverlay = ({
   // Text Colors
   const [nameTextColor, setNameTextColor] = useState('#ffffff');
   const [ticketTextColor, setTicketTextColor] = useState('#ffffff');
+
+  // Dropdown states
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const dropdownRefs = {
+    sound: useRef(null),
+    applause: useRef(null),
+    pointer: useRef(null),
+    theme: useRef(null)
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      Object.values(dropdownRefs).forEach(ref => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setOpenDropdown(null);
+        }
+      });
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const soundOptions = [
     { label: 'Classic Spin', value: 'spin1' },
@@ -130,32 +152,60 @@ const WheelOverlay = ({
               {/* Spin Sound */}
               <div className="spin-wheel-dropdown-group">
                 <h4>Spin Sound</h4>
-                <div className="spin-wheel-select-wrapper">
-                  <select
-                    value={selectedSound}
-                    onChange={(e) => setSelectedSound(e.target.value)}
+                <div className="spin-wheel-select-wrapper" ref={dropdownRefs.sound}>
+                  <div 
                     className="spin-wheel-custom-select"
+                    onClick={() => setOpenDropdown(openDropdown === 'sound' ? null : 'sound')}
                   >
-                    {soundOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
+                    {soundOptions.find(opt => opt.value === selectedSound)?.label || 'Select...'}
+                    <span className="spin-wheel-dropdown-arrow">▼</span>
+                  </div>
+                  {openDropdown === 'sound' && (
+                    <div className="spin-wheel-dropdown-menu">
+                      {soundOptions.map((opt) => (
+                        <div
+                          key={opt.value}
+                          className={`spin-wheel-dropdown-option ${selectedSound === opt.value ? 'selected' : ''}`}
+                          onClick={() => {
+                            setSelectedSound(opt.value);
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          {opt.label}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
               {/* Applause Sound */}
               <div className="spin-wheel-dropdown-group">
                 <h4>Applause Sound</h4>
-                <div className="spin-wheel-select-wrapper">
-                  <select
-                    value={selectedApplause}
-                    onChange={(e) => setSelectedApplause(e.target.value)}
+                <div className="spin-wheel-select-wrapper" ref={dropdownRefs.applause}>
+                  <div 
                     className="spin-wheel-custom-select"
+                    onClick={() => setOpenDropdown(openDropdown === 'applause' ? null : 'applause')}
                   >
-                    {applauseSoundOptions.map((opt) => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
+                    {applauseSoundOptions.find(opt => opt.value === selectedApplause)?.label || 'Select...'}
+                    <span className="spin-wheel-dropdown-arrow">▼</span>
+                  </div>
+                  {openDropdown === 'applause' && (
+                    <div className="spin-wheel-dropdown-menu">
+                      {applauseSoundOptions.map((opt) => (
+                        <div
+                          key={opt.value}
+                          className={`spin-wheel-dropdown-option ${selectedApplause === opt.value ? 'selected' : ''}`}
+                          onClick={() => {
+                            setSelectedApplause(opt.value);
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          {opt.label}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -181,31 +231,66 @@ const WheelOverlay = ({
               {/* Pointer Style */}
               <div className="spin-wheel-dropdown-group">
                 <h4>Pointer Style</h4>
-                <div className="spin-wheel-select-wrapper">
-                  <select
-                    value={pointerStyle}
-                    onChange={(e) => setPointerStyle(e.target.value)}
+                <div className="spin-wheel-select-wrapper" ref={dropdownRefs.pointer}>
+                  <div 
                     className="spin-wheel-custom-select"
+                    onClick={() => setOpenDropdown(openDropdown === 'pointer' ? null : 'pointer')}
                   >
-                    {pointerOptions.map(opt => (
-                      <option key={opt.value} value={opt.value}>{opt.label}</option>
-                    ))}
-                  </select>
+                    {pointerOptions.find(opt => opt.value === pointerStyle)?.label || 'Select...'}
+                    <span className="spin-wheel-dropdown-arrow">▼</span>
+                  </div>
+                  {openDropdown === 'pointer' && (
+                    <div className="spin-wheel-dropdown-menu">
+                      {pointerOptions.map(opt => (
+                        <div
+                          key={opt.value}
+                          className={`spin-wheel-dropdown-option ${pointerStyle === opt.value ? 'selected' : ''}`}
+                          onClick={() => {
+                            setPointerStyle(opt.value);
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          {opt.label}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
               {/* Theme */}
               <div className="spin-wheel-dropdown-group">
                 <h4>Theme</h4>
-                <div className="spin-wheel-select-wrapper">
-                  <select
-                    value={theme}
-                    onChange={(e) => setTheme(e.target.value)}
+                <div className="spin-wheel-select-wrapper" ref={dropdownRefs.theme}>
+                  <div 
                     className="spin-wheel-custom-select"
+                    onClick={() => setOpenDropdown(openDropdown === 'theme' ? null : 'theme')}
                   >
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                  </select>
+                    {theme === 'light' ? 'Light' : 'Dark'}
+                    <span className="spin-wheel-dropdown-arrow">▼</span>
+                  </div>
+                  {openDropdown === 'theme' && (
+                    <div className="spin-wheel-dropdown-menu">
+                      <div
+                        className={`spin-wheel-dropdown-option ${theme === 'light' ? 'selected' : ''}`}
+                        onClick={() => {
+                          setTheme('light');
+                          setOpenDropdown(null);
+                        }}
+                      >
+                        Light
+                      </div>
+                      <div
+                        className={`spin-wheel-dropdown-option ${theme === 'dark' ? 'selected' : ''}`}
+                        onClick={() => {
+                          setTheme('dark');
+                          setOpenDropdown(null);
+                        }}
+                      >
+                        Dark
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 

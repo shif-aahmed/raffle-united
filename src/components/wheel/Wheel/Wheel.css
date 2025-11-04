@@ -62,27 +62,27 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   z-index: 10;
 }
 /* Arrow Style (with shaft) */
 .spin-wheel-pointer-arrow {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: url('../../../assets/arrow.png') center/contain no-repeat;
 }
 /* Triangle Style (simple) */
 .spin-wheel-pointer-triangle {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: url('../../../assets/triangular.png') center/contain no-repeat;
 }
 
 /* Hand Style */
 .spin-wheel-pointer-hand {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   background: url('../../../assets/hand-pointer.png') center/contain no-repeat;
 }
 
