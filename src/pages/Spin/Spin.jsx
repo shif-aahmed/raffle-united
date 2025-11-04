@@ -20,6 +20,7 @@ const Spin = () => {
   const [customColors, setCustomColors] = useState([]);
   const [selectedSound, setSelectedSound] = useState('spin2');
   const [applauseSound, setApplauseSound] = useState('applause1');
+  const [isParticipantsOpen, setIsParticipantsOpen] = useState(false);
   const [currentFilePicture, setCurrentFilePicture] = useState(null);
   const [showBlackScreen, setShowBlackScreen] = useState(false);
 
@@ -149,6 +150,12 @@ const Spin = () => {
           }}
         />
         <HeaderWithResults />
+        <button 
+          className="spin-wheel-participants-toggle-button"
+          onClick={() => setIsParticipantsOpen(true)}
+        >
+          Participants
+        </button>
       </div>
 
       <div className={`spin-wheel-main-layout ${theme}-theme`}>
@@ -177,7 +184,11 @@ const Spin = () => {
             <WinnersLadder />
           </div>
         </div>
-        <Participants currentData={fullData} />
+        <Participants 
+          currentData={fullData} 
+          isOpen={isParticipantsOpen}
+          onClose={() => setIsParticipantsOpen(false)}
+        />
         <WinnerPopup />
       </div>
     </>
