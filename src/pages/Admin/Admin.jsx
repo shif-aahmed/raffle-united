@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Admin.css';
+import waveYellow from '../../assets/wave-yellow.svg';
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -235,8 +236,15 @@ const Admin = () => {
       )}
 
       {isAuthenticated && (
-        <div className="spin-admin-container">
-          <h1 className="spin-admin-heading">Spin Wheel Admin Panel</h1>
+        <>
+          <section className="spin-admin-hero">
+            <div className="spin-admin-background"></div>
+            <h1 className="spin-admin-hero-title">ADMIN PANEL</h1>
+            <div className="spin-admin-wave">
+              <img src={waveYellow} alt="Wave" className="spin-admin-wave-image" />
+            </div>
+          </section>
+          <div className="spin-admin-container">
           <div className="spin-admin-nav-button-container">
             <button
               className="spin-admin-spinwheel-button"
@@ -348,6 +356,7 @@ const Admin = () => {
             </button>
           </div>
         </div>
+        </>
       )}
     </>
   );

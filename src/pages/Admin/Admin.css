@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 /* Password Modal */
 .spin-admin-password-modal {
   position: fixed;
@@ -59,16 +61,68 @@ body {
   overflow-x: hidden; /* prevent unwanted horizontal scroll */
 }
 
+/* Admin Hero Section */
+.spin-admin-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden !important;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin-admin-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 38, 109);
+  z-index: 1;
+}
+
+.spin-admin-hero-title {
+  position: relative;
+  bottom: 4rem;
+  z-index: 3;
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 0 20px;
+  word-wrap: break-word;
+}
+
+.spin-admin-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.spin-admin-wave-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Admin Container */
 .spin-admin-container {
-  min-height: 100vh;
+  min-height: calc(100vh - 400px);
   width: 100vw;
   color: #fff;
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 20px;
   box-sizing: border-box;
   text-align: center;
@@ -97,7 +151,7 @@ body {
   padding: 12px 25px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(130deg, #00ffc3, #008cff);
+  background: rgb(184, 0, 0);
   color: #fff;
   font-weight: bold;
   cursor: pointer;
@@ -105,7 +159,7 @@ body {
 }
 
 .spin-admin-spinwheel-button:hover {
-  background: linear-gradient(130deg, #00c295, #006ac0);
+  background: l#960000;
 }
 
 /* Table Header with Add Row */
@@ -126,14 +180,14 @@ body {
   font-size: 1.5rem;
   border: none;
   border-radius: 6px;
-  background-color: #23d4ab;
+  background-color: #001486;
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .spin-admin-add-row-button:hover {
-  background-color: #1da787;
+  background-color: #001cb9;
 }
 
 /* Admin Table */
@@ -157,7 +211,19 @@ body {
 .spin-admin-table td {
   padding: 12px;
   text-align: center;
+  vertical-align: middle;
   border: none;
+}
+
+.spin-admin-table td {
+  white-space: normal;
+}
+
+.spin-admin-table td:has(.spin-admin-preview-image),
+.spin-admin-table td:has(.spin-admin-custom-file-input),
+.spin-admin-table td:has(.custom-file-input),
+.spin-admin-table td:has(.spin-admin-custom-ticket) {
+  text-align: center;
 }
 
 .spin-admin-table th {
@@ -170,7 +236,8 @@ body {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  margin-top: 5px;
+  margin: 0 auto;
+  display: block;
   border-radius: 6px;
 }
 
@@ -212,14 +279,14 @@ body {
   width: 100%;
   margin-top: 20px;
   box-sizing: border-box;
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
 }
 
 .spin-admin-upload-button {
   padding: 12px 35px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(130deg, #00ffc3, #008cff);
+  background: rgb(184, 0, 0);
   color: #f0f0f0;
   font-weight: bold;
   cursor: pointer;
@@ -227,7 +294,7 @@ body {
 }
 
 .spin-admin-upload-button:hover {
-  background: linear-gradient(130deg, #00c295, #006ac0);
+  background: #960000;
 }
 /* Custom File Input */
 .spin-admin-custom-file-input {
@@ -235,17 +302,30 @@ body {
   display: inline-block;
   width: 100%;
   max-width: 200px;
+  margin: 0 auto;
 }
 
-.spin-admin-custom-file-input input[type="file"] {
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.spin-admin-custom-file-input input[type="file"],
+.custom-file-input input[type="file"] {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
   cursor: pointer;
+  top: 0;
+  left: 0;
 }
 
-.spin-admin-custom-file-input .file-label {
+.spin-admin-custom-file-input .file-label,
+.custom-file-input .file-label {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,6 +338,7 @@ body {
   transition: 0.3s;
   text-align: center;
   font-size: 0.9rem;
+  margin: 0;
 }
 
 
@@ -271,26 +352,37 @@ body {
 .spin-admin-custom-ticket {
   position: relative;
   display: inline-block;
-
+  margin: 0 auto;
 }
 .spin-admin-ticket-input{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   padding: 10px 15px;
   background-color: #f0f0f0;
   color: #7b7b7b;
   font-weight: bold;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: text;
   transition: 0.3s;
   text-align: center;
   border: none;
-  width: 100px;
+  width: 150px;
+  margin: 0 auto;
   font-size: 0.9rem;
+  box-sizing: border-box;
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+  .spin-admin-hero {
+    height: 350px;
+  }
+
+  .spin-admin-hero-title {
+    font-size: 2.8rem;
+    bottom: 3rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .spin-admin-table th,
   .spin-admin-table td {
@@ -312,6 +404,15 @@ body {
 }
 
 @media (max-width: 768px) {
+  .spin-admin-hero {
+    height: 300px;
+  }
+
+  .spin-admin-hero-title {
+    font-size: 2.2rem;
+    bottom: 2rem;
+  }
+
   .spin-admin-table-header {
     flex-direction: column;
     gap: 10px;
@@ -333,6 +434,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  .spin-admin-hero {
+    height: 260px;
+  }
+
+  .spin-admin-hero-title {
+    font-size: 1.8rem;
+    bottom: 1.5rem;
+  }
+
   .spin-admin-table {
     font-size: 0.8rem;
   }
