@@ -65,6 +65,7 @@ const Navbar = ({ onNavigate }) => {
           </div>
           <NavLink to="/how-to-play" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>How to Play</NavLink>
           <NavLink to="/previous-winners" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Winners</NavLink>
+          <NavLink to="/admin" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Spin</NavLink>
         </div>
 
         {/* Right Section - Cart and Mobile Menu */}
@@ -144,6 +145,7 @@ const Navbar = ({ onNavigate }) => {
             </div>
             <NavLink to="/how-to-play" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>How to Play</NavLink>
             <NavLink to="/previous-winners" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>Winners</NavLink>
+            <NavLink to="/admin" className={({ isActive }) => `mobile-nav-link${isActive ? ' active' : ''}`}>Spin</NavLink>
             <div className="mobile-buttons">
               <NavLink to="/login" className="btn-login mobile-btn">Login</NavLink>
               <NavLink to="/register" className="btn-register mobile-btn">Register</NavLink>

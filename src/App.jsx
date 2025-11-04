@@ -18,6 +18,8 @@ import Cart from './pages/Cart/Cart'
 import FAQs from './pages/FAQs/FAQs'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
+import Spin from './pages/Spin/Spin'
+import Admin from './pages/Admin/Admin'
 import './App.css'
 
 function ScrollToTop() {
@@ -55,6 +57,8 @@ function App() {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/spin" element={<Spin />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </Router>

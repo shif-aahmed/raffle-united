@@ -1,0 +1,53 @@
+.spin-wheel-participants-section {
+  background-color: white;
+  border-radius: 10px;
+  width: 25rem;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  position: fixed !important;
+  top: 12rem;
+  right: 5rem; 
+}
+
+.spin-wheel-participants-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.spin-wheel-participants-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.spin-wheel-participant-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s;
+}
+
+.spin-wheel-participant-number {
+  font-weight: bold;
+  color: var(--primary-color);
+  min-width: 50px;
+  text-align: right;
+}
+
+.spin-wheel-search-box {
+  color: #000;               
+  background-color: #fff;    
+  font-size: 16px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  margin-left: 5px;
+}

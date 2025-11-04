@@ -1,0 +1,88 @@
+.spin-wheel-wheel-container {
+  position: relative;
+  width: 550px;
+  margin-top: 40px;
+  height: 550px;
+  margin-bottom: 20px;
+  margin-left: -33rem;
+  /* background-color: black; */
+}
+
+.spin-wheel-pointer {
+  position: absolute;
+  top: -23px;
+  left: 49%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 25px solid var(--wheel-border);
+  z-index: 10;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+  background-color: transparent;
+}
+
+.spin-wheel-wheel {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid var(--wheel-border);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 10s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: conic-gradient(
+    from 0deg,
+    #e74c3c, #e67e22, #f1c40f, #2ecc71, 
+    #1abc9c, #3498db, #9b59b6, #e74c3c
+  );
+}
+
+.spin-wheel-outer-wheel {
+  width: 100%;
+  height: 100%;
+}
+
+.spin-wheel-interaction-blocker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  z-index: 999; /* LESS than your popup */
+  pointer-events: all;
+}
+
+/* Default pointer container */
+.spin-wheel-wheel-pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+/* Arrow Style (with shaft) */
+.spin-wheel-pointer-arrow {
+  width: 40px;
+  height: 40px;
+  background: url('../../../assets/arrow.png') center/contain no-repeat;
+}
+/* Triangle Style (simple) */
+.spin-wheel-pointer-triangle {
+  width: 40px;
+  height: 40px;
+  background: url('../../../assets/triangular.png') center/contain no-repeat;
+}
+
+/* Hand Style */
+.spin-wheel-pointer-hand {
+  width: 40px;
+  height: 40px;
+  background: url('../../../assets/hand-pointer.png') center/contain no-repeat;
+}
+

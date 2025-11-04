@@ -1,0 +1,44 @@
+
+.spin-wheel-controls {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  margin-left: -25rem;
+  background-color: black;
+}
+
+.spin-wheel-controls .spin-wheel-btn {
+  padding: 12px 45px !important;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.spin-wheel-btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+.spin-wheel-btn-primary:hover {
+  background-color: blue;
+  color: white;
+}
+
+.spin-wheel-btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.spin-wheel-btn-secondary:hover {
+  background-color: green;
+  color: white;
+}
+.spin-wheel-btn:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+

@@ -1,0 +1,185 @@
+*{
+    color: #000;
+    padding: 0;
+    margin: 0
+}
+body{
+    overflow-x: hidden;
+}
+:root {
+  --primary-color: #4285f4;
+  --secondary-color: #34a853;
+  --accent-color: #ea4335;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --wheel-border: #2c3e50;
+}
+
+
+/* RESPONSIVE LAYOUT */
+.spin-wheel-main-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #010101;
+  
+}
+.spin-wheel-wheel-section,.spin-wheel-container-main{
+   background-color: #010101;
+}
+.spin-wheel-overlay{
+  background-color: #414141;
+  padding: 10px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width: 444px) {
+  .spin-wheel-overlay{
+    width: 120vw;
+  }
+  
+}
+@media (min-width: 769px) {
+ .spin-wheel-participants-section{
+   margin-left: -75px !important;
+ }   
+}
+@media (max-width: 1024px) {
+.spin-wheel-wheel-container {
+  margin: 2rem auto;
+}
+  .spin-wheel-winners-ladder,.spin-wheel-results{
+    margin-left: 5rem !important;
+  }
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    width: 100%;
+    max-height: 300px;
+    margin-left: 0rem !important;
+    max-width: 30rem;
+    margin: 0 auto;
+    height: auto;
+    margin-top: 30px;
+  }
+
+  .spin-wheel-controls {
+    margin: 2rem auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .spin-wheel-winners-ladder {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 600px;
+  }
+}
+@media (max-width: 768px) {
+  .spin-wheel-wheel-container {
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+  }
+
+  .spin-wheel-participants-section {
+    padding: 15px;
+    width: 30rem !important;
+    margin-left: -4rem !important;
+  }
+
+  .spin-wheel-winner-popup {
+    width: 90%;
+    padding: 20px;
+  }
+.spin-wheel-winners-ladder,.spin-wheel-results{
+    margin-left: 0rem !important;
+  }
+  .spin-wheel-controls .spin-wheel-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .spin-wheel-result-display,
+  .spin-wheel-winner-popup .spin-wheel-winner-name,
+  .spin-wheel-winner-popup .spin-wheel-winner-combination {
+    font-size: 1rem;
+  }
+
+  .spin-wheel-controls {
+    gap: 10px;
+  }
+
+  .spin-wheel-controls .spin-wheel-btn {
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+  }
+
+  .spin-wheel-search-box {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 1205px) {
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    transform: scale(0.95);
+    transform-origin: top center;
+    padding: 1.5rem;
+        right: 2rem;
+
+  }
+}
+
+@media (max-width: 1150px) {
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    transform: scale(0.9);
+        right: 2rem;
+
+  }
+}
+
+@media (max-width: 1100px) {
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    transform: scale(0.85);
+        right: 2rem;
+
+  }
+}
+
+@media (max-width: 1050px) {
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    transform: scale(0.8);
+    right: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .spin-wheel-participants-section {
+    position: fixed !important;
+    transform: scale(0.75);
+    max-width: 100%;
+    overflow-x: auto;
+        right: -2rem;
+
+  }
+}
+@media (max-width: 555px) {
+  .spin-wheel-overlay{
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+}
+
