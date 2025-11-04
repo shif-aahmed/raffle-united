@@ -24,10 +24,33 @@ body{
   justify-content: center;
   min-height: 100vh;
   background-color: #010101;
-  
 }
-.spin-wheel-wheel-section,.spin-wheel-container-main{
-   background-color: #010101;
+
+.spin-wheel-wheel-section,
+.spin-wheel-container-main {
+  background-color: #010101;
+}
+
+/* Light Theme */
+.spin-wheel-main-layout.light-theme {
+  background-color: #ffffff;
+}
+
+.spin-wheel-main-layout.light-theme .spin-wheel-wheel-section,
+.spin-wheel-main-layout.light-theme .spin-wheel-container-main,
+.spin-wheel-main-layout.light-theme .spin-wheel-controls {
+  background-color: #ffffff;
+}
+
+/* Dark Theme */
+.spin-wheel-main-layout.dark-theme {
+  background-color: #010101;
+}
+
+.spin-wheel-main-layout.dark-theme .spin-wheel-wheel-section,
+.spin-wheel-main-layout.dark-theme .spin-wheel-container-main,
+.spin-wheel-main-layout.dark-theme .spin-wheel-controls {
+  background-color: #010101;
 }
 .spin-wheel-overlay{
   background-color: #414141;

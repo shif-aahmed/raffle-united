@@ -128,26 +128,36 @@ const WheelOverlay = ({
               <button className="spin-wheel-add-btn" onClick={addColorInput}> Add Color</button>
 
               {/* Spin Sound */}
-              <h4>Spin Sound</h4>
-              <select
-                value={selectedSound}
-                onChange={(e) => setSelectedSound(e.target.value)}
-              >
-                {soundOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
+              <div className="spin-wheel-dropdown-group">
+                <h4>Spin Sound</h4>
+                <div className="spin-wheel-select-wrapper">
+                  <select
+                    value={selectedSound}
+                    onChange={(e) => setSelectedSound(e.target.value)}
+                    className="spin-wheel-custom-select"
+                  >
+                    {soundOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
               {/* Applause Sound */}
-              <h4>Applause Sound</h4>
-              <select
-                value={selectedApplause}
-                onChange={(e) => setSelectedApplause(e.target.value)}
-              >
-                {applauseSoundOptions.map((opt) => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
+              <div className="spin-wheel-dropdown-group">
+                <h4>Applause Sound</h4>
+                <div className="spin-wheel-select-wrapper">
+                  <select
+                    value={selectedApplause}
+                    onChange={(e) => setSelectedApplause(e.target.value)}
+                    className="spin-wheel-custom-select"
+                  >
+                    {applauseSoundOptions.map((opt) => (
+                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
               {/* Wheel Border */}
               <h4>Wheel Border</h4>
@@ -169,25 +179,35 @@ const WheelOverlay = ({
               </div>
 
               {/* Pointer Style */}
-              <h4>Pointer Style</h4>
-              <select
-                value={pointerStyle}
-                onChange={(e) => setPointerStyle(e.target.value)}
-              >
-                {pointerOptions.map(opt => (
-                  <option key={opt.value} value={opt.value}>{opt.label}</option>
-                ))}
-              </select>
+              <div className="spin-wheel-dropdown-group">
+                <h4>Pointer Style</h4>
+                <div className="spin-wheel-select-wrapper">
+                  <select
+                    value={pointerStyle}
+                    onChange={(e) => setPointerStyle(e.target.value)}
+                    className="spin-wheel-custom-select"
+                  >
+                    {pointerOptions.map(opt => (
+                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
 
               {/* Theme */}
-              <h4>Theme</h4>
-              <select
-                value={theme}
-                onChange={(e) => setTheme(e.target.value)}
-              >
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
+              <div className="spin-wheel-dropdown-group">
+                <h4>Theme</h4>
+                <div className="spin-wheel-select-wrapper">
+                  <select
+                    value={theme}
+                    onChange={(e) => setTheme(e.target.value)}
+                    className="spin-wheel-custom-select"
+                  >
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                  </select>
+                </div>
+              </div>
 
               {/* Text Colors */}
               <h4>Text Colors</h4>

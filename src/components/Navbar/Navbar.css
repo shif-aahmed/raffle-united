@@ -272,8 +272,8 @@
 
 .btn-login:hover {
   background-color: black;
-  color: white;
-  border-color: black;
+  color: white !important;
+  border-color: black !important;
 }
 
 .btn-register {
