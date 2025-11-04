@@ -37,7 +37,7 @@ const Navbar = ({ onNavigate }) => {
       <div className="navbar-container">
         {/* Logo Section */}
         <div className="navbar-logo">
-          <img src={logo} alt="Golden Raffle" className="logo-image" />
+          <img src={logo} alt="Raffle United" className="logo-image" />
         </div>
 
         {/* Navigation Links */}

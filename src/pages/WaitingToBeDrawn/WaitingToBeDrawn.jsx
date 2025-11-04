@@ -12,7 +12,7 @@ const competitions = [
     title: "Mega Mystery Box",
     status: "Open",
     price: "£1.00",
-    description: `Unlock the Ultimate Mystery Box for just £1! Golden Raffle are bringing back our popular mystery box. Imagine a prize box that could hold anything—from luxury gadgets and exclusive collectibles to an unforgettable getaway! For just £1, you have a chance to win a mystery prize worth far more than the entry price.`,
+    description: `Unlock the Ultimate Mystery Box for just £1! Raffle United are bringing back our popular mystery box. Imagine a prize box that could hold anything—from luxury gadgets and exclusive collectibles to an unforgettable getaway! For just £1, you have a chance to win a mystery prize worth far more than the entry price.`,
     sold: 184,
     left: 316,
   },

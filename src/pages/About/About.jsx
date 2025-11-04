@@ -17,7 +17,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-container">
           <div className="about-text-block">
-            <p>Hi, we are Golden Raffle!</p>
+            <p>Hi, we are Raffle United!</p>
             <p>
               We are just three best pals that want to offer YOU the chance to win
               amazing prizes and experiences at knockdown prices.
@@ -54,7 +54,7 @@ const About = () => {
               So be sure to keep your eyes on our website and social media for all our awesome
               competitions which will be drawn live via Facebook using Google random number generator.
             </p>
-            <p>Thanks for playing and good luck!!<br/>The Golden Raffle Team</p>
+            <p>Thanks for playing and good luck!!<br/>The Raffle United Team</p>
             <Link to="/live-competition" className="about-cta-btn">Join Competitions</Link>
           </div>
         </div>

@@ -75,7 +75,7 @@ const WinnersSection = () => {
   return (
     <section className="winners-section">
       <h2 className="winners-heading">Winners</h2>
-      <p className="winners-subheading">The Golden Raffle Hall of Fame!!</p>
+      <p className="winners-subheading">The Raffle United Hall of Fame!!</p>
 
       <div className="slider-container">
         <div className="slides">

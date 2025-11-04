@@ -2,7 +2,7 @@
 
 /* Footer Styles */
 .footer {
-  background-color: #333333;
+  background-color:  #001b4d;
   color: #CCCCCC;
   margin-top: auto;
   font-family: 'Quicksand', sans-serif;
@@ -135,14 +135,14 @@
 }
 
 .footer-bottom {
-  background-color: #222222;
+  background-color: #000818;
   padding: 25px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-}
+} 
 
 .footer-bottom-left p {
   color: #CCCCCC;

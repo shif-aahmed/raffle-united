@@ -27,7 +27,7 @@ const competitions = [
     price: "£2.00",
     description: `
       🌲 Win a Family Holiday to Center Parcs – Whinfell Forest! 🌳
-      Golden Raffle are giving you the chance to win the ultimate family adventure.
+      Raffle United are giving you the chance to win the ultimate family adventure.
       Enjoy 4 nights in a 3-bedroom lodge for up to 6 guests — perfect for families or groups.
     `,
     winner: { name: "William Mckechinie", ticket: "704", date: "13/10/2025" },

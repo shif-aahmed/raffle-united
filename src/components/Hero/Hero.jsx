@@ -15,18 +15,18 @@ const Hero = () => {
       {
         image: heroImage,
         welcome: "Welcome to",
-        title: "GOLDEN RAFFLE LTD",
+        title: "RAFFLE UNITED LTD",
         description:
-          "The home of golden raffle prizes with winners from all over Scotland and across the UK! Make sure you follow us on social media for updates on the latest prize draws!",
+          "The home of raffle united prizes with winners from all over Scotland and across the UK! Make sure you follow us on social media for updates on the latest prize draws!",
         buttonText: "Browse Competitions",
         buttonHref: "/live-competition",
       },
       {
         image: heroImage2,
         welcome: "Welcome to",
-        title: "GOLDEN RAFFLE LTD",
+        title: "RAFFLE UNITED LTD",
         description:
-          "The home of golden raffle prizes with winners from all over Scotland and across the UK! Make sure you follow us on social media for updates on the latest prize draws!",
+          "The home of raffle united prizes with winners from all over Scotland and across the UK! Make sure you follow us on social media for updates on the latest prize draws!",
         buttonText: "Browse Competitions",
         buttonHref: "/live-competition",
       },

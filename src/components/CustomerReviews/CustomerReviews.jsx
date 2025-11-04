@@ -7,7 +7,7 @@ const CustomerReviews = () => {
     <section className="customer-reviews-section">
       <h2 className="customer-reviews-heading">What Our Customers Say</h2>
       <p className="customer-reviews-subheading">
-        Hear what some of our amazing customers have to say about Golden Raffle!
+        Hear what some of our amazing customers have to say about Raffle United!
       </p>
 
       <div className="review-card">

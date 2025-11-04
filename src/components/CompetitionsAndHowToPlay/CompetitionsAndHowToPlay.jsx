@@ -91,10 +91,10 @@ const CompetitionsAndHowToPlay = () => {
           <div className="home-step-card">
             <div className="home-step-icon">
               <div className="home-icon-circle">
-                <img src={icon3} alt="Golden Raffle Winner" className="home-icon-image" />
+                <img src={icon3} alt="Raffle United Winner" className="home-icon-image" />
               </div>
             </div>
-            <h3 className="home-step-title">ARE YOU A GOLDEN RAFFLE?</h3>
+            <h3 className="home-step-title">ARE YOU A RAFFLE UNITED?</h3>
             <p className="home-step-description">
               If your number comes up trumps, we will contact you and arrange for delivery of your prize!
             </p>
