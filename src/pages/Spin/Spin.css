@@ -6,6 +6,16 @@
 body{
     overflow-x: hidden;
 }
+
+/* Hide scrollbars but keep scrolling functionality */
+* {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
 :root {
   --primary-color: #4285f4;
   --secondary-color: #34a853;
@@ -29,6 +39,12 @@ body{
 .spin-wheel-wheel-section,
 .spin-wheel-container-main {
   background-color: #010101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
 }
 
 /* Light Theme */
@@ -53,7 +69,7 @@ body{
   background-color: #010101;
 }
 .spin-wheel-overlay{
-  background-color: #414141;
+  background-color:  rgb(0, 38, 109);
   padding: 10px;
   width: 100vw;
   display: flex;
@@ -67,13 +83,20 @@ body{
   }
   
 }
+.spin-wheel-buttons-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .spin-wheel-participants-toggle-button {
   padding: 12px 24px;
   background-color: rgb(184, 0, 0);
   color: white;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 600 !important;
+  font-size: 16px !important;
   cursor: pointer;
   transition: background-color 0.3s;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -81,6 +104,25 @@ body{
 
 .spin-wheel-participants-toggle-button:hover {
   background-color: #960000;
+}
+
+.spin-wheel-open-overlay-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.spin-wheel-open-overlay-button:hover {
+  background: linear-gradient(135deg, #27ae60, #1e874b);
+  transform: translateY(-2px);
 }
 
 @media (min-width: 769px) {
@@ -92,9 +134,7 @@ body{
 .spin-wheel-wheel-container {
   margin: 2rem auto;
 }
-  .spin-wheel-winners-ladder,.spin-wheel-results{
-    margin-left: 5rem !important;
-  }
+
   .spin-wheel-participants-section {
     position: fixed !important;
     width: 90%;
@@ -145,9 +185,7 @@ body{
     width: 90%;
     padding: 20px;
   }
-.spin-wheel-winners-ladder,.spin-wheel-results{
-    margin-left: 0rem !important;
-  }
+
   .spin-wheel-controls .spin-wheel-btn {
     width: 100%;
     justify-content: center;
@@ -173,6 +211,21 @@ body{
   .spin-wheel-search-box {
     width: 100%;
     margin: 10px 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .spin-wheel-wheel-container {
+    margin-left: 0;
+    margin: 2rem auto;
+  }
+  
+  .spin-wheel-winners-ladder {
+    position: static;
+    transform: none;
+    margin: 30px auto 50px auto;
+    width: 100%;
+    max-width: 30rem;
   }
 }
 
@@ -219,8 +272,14 @@ body{
     transform: scale(0.75);
     max-width: 100%;
     overflow-x: auto;
-        right: -2rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    right: -2rem;
 
+  }
+  
+  .spin-wheel-participants-section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 }
 @media (max-width: 555px) {

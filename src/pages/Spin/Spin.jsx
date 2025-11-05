@@ -34,6 +34,7 @@ const Spin = () => {
   // NEW: Text color and Ticket color
   const [textColor, setTextColor] = useState('#ffffff');
   const [ticketColor, setTicketColor] = useState('#ffffff');
+  const [isWheelOverlayOpen, setIsWheelOverlayOpen] = useState(false);
 
   const isSpinningRef = useRef(false);
 
@@ -148,14 +149,24 @@ const Spin = () => {
             setTextColor(name);
             setTicketColor(ticket);
           }}
+          isOpen={isWheelOverlayOpen}
+          onOpenChange={setIsWheelOverlayOpen}
         />
         <HeaderWithResults />
-        <button 
-          className="spin-wheel-participants-toggle-button"
-          onClick={() => setIsParticipantsOpen(true)}
-        >
-          Participants
-        </button>
+        <div className="spin-wheel-buttons-container">
+          <button 
+            className="spin-wheel-participants-toggle-button"
+            onClick={() => setIsParticipantsOpen(true)}
+          >
+            Participants
+          </button>
+          <button 
+            className="spin-wheel-open-overlay-button"
+            onClick={() => setIsWheelOverlayOpen(true)}
+          >
+          Customize
+          </button>
+        </div>
       </div>
 
       <div className={`spin-wheel-main-layout ${theme}-theme`}>

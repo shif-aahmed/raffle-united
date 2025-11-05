@@ -8,9 +8,13 @@ const WheelOverlay = ({
   onBorderStyleChange,
   onPointerStyleChange,
   onThemeChange,
-  onTextColorsChange // For name & ticket number colors
+  onTextColorsChange, // For name & ticket number colors
+  isOpen: externalIsOpen,
+  onOpenChange
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [internalIsOpen, setInternalIsOpen] = useState(false);
+  const isOpen = externalIsOpen !== undefined ? externalIsOpen : internalIsOpen;
+  const setIsOpen = onOpenChange || setInternalIsOpen;
   const [colorInputs, setColorInputs] = useState([
     { value: '#e74c3c', active: false },
     { value: '#3498db', active: false }
@@ -45,7 +49,10 @@ const WheelOverlay = ({
     const handleClickOutside = (event) => {
       Object.values(dropdownRefs).forEach(ref => {
         if (ref.current && !ref.current.contains(event.target)) {
-          setOpenDropdown(null);
+          // Don't close if clicking on dropdown menu items
+          if (!event.target.closest('.spin-wheel-dropdown-menu')) {
+            setOpenDropdown(null);
+          }
         }
       });
     };
@@ -113,19 +120,16 @@ const WheelOverlay = ({
     setIsOpen(false);
   };
 
+  if (!isOpen) return null;
+
   return (
     <>
-      <button className="spin-wheel-open-overlay-button" onClick={() => setIsOpen(true)}>
-        🎨 Customize Wheel
-      </button>
-
-      {isOpen && (
-        <div className="spin-wheel-overlay-backdrop">
-          <div className="spin-wheel-overlay-content">
-            <div className="spin-wheel-overlay-header">
-              <h2>Customize Wheel Appearance</h2>
-              <button className="spin-wheel-close-button" onClick={() => setIsOpen(false)}>×</button>
-            </div>
+      <div className="spin-wheel-overlay-backdrop" onClick={() => setIsOpen(false)}></div>
+      <div className={`spin-wheel-overlay-content ${isOpen ? 'spin-wheel-overlay-open' : ''}`}>
+        <div className="spin-wheel-overlay-header">
+          <h2>Customize Wheel Appearance</h2>
+          <button className="spin-wheel-close-button" onClick={() => setIsOpen(false)}>×</button>
+        </div>
 
             <div className="spin-wheel-overlay-body">
               {/* Wheel Colors */}
@@ -161,12 +165,13 @@ const WheelOverlay = ({
                     <span className="spin-wheel-dropdown-arrow">▼</span>
                   </div>
                   {openDropdown === 'sound' && (
-                    <div className="spin-wheel-dropdown-menu">
+                    <div className="spin-wheel-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                       {soundOptions.map((opt) => (
                         <div
                           key={opt.value}
                           className={`spin-wheel-dropdown-option ${selectedSound === opt.value ? 'selected' : ''}`}
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.stopPropagation();
                             setSelectedSound(opt.value);
                             setOpenDropdown(null);
                           }}
@@ -191,12 +196,13 @@ const WheelOverlay = ({
                     <span className="spin-wheel-dropdown-arrow">▼</span>
                   </div>
                   {openDropdown === 'applause' && (
-                    <div className="spin-wheel-dropdown-menu">
+                    <div className="spin-wheel-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                       {applauseSoundOptions.map((opt) => (
                         <div
                           key={opt.value}
                           className={`spin-wheel-dropdown-option ${selectedApplause === opt.value ? 'selected' : ''}`}
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.stopPropagation();
                             setSelectedApplause(opt.value);
                             setOpenDropdown(null);
                           }}
@@ -240,12 +246,13 @@ const WheelOverlay = ({
                     <span className="spin-wheel-dropdown-arrow">▼</span>
                   </div>
                   {openDropdown === 'pointer' && (
-                    <div className="spin-wheel-dropdown-menu">
+                    <div className="spin-wheel-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                       {pointerOptions.map(opt => (
                         <div
                           key={opt.value}
                           className={`spin-wheel-dropdown-option ${pointerStyle === opt.value ? 'selected' : ''}`}
-                          onClick={() => {
+                          onClick={(e) => {
+                            e.stopPropagation();
                             setPointerStyle(opt.value);
                             setOpenDropdown(null);
                           }}
@@ -270,10 +277,11 @@ const WheelOverlay = ({
                     <span className="spin-wheel-dropdown-arrow">▼</span>
                   </div>
                   {openDropdown === 'theme' && (
-                    <div className="spin-wheel-dropdown-menu">
+                    <div className="spin-wheel-dropdown-menu" onClick={(e) => e.stopPropagation()}>
                       <div
                         className={`spin-wheel-dropdown-option ${theme === 'light' ? 'selected' : ''}`}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           setTheme('light');
                           setOpenDropdown(null);
                         }}
@@ -282,7 +290,8 @@ const WheelOverlay = ({
                       </div>
                       <div
                         className={`spin-wheel-dropdown-option ${theme === 'dark' ? 'selected' : ''}`}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           setTheme('dark');
                           setOpenDropdown(null);
                         }}
@@ -317,9 +326,7 @@ const WheelOverlay = ({
                 <button className="spin-wheel-apply-btn" onClick={applyChanges}> Apply Changes</button>
               </div>
             </div>
-          </div>
         </div>
-      )}
     </>
   );
 };

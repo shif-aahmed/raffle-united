@@ -64,7 +64,7 @@ const WinnersLadder = () => {
 
   return (
     <div className="spin-wheel-winners-ladder">
-      <h2>Top 5 Winners</h2>
+      <h2>Top Winners</h2>
       <div id="winnersList" ref={winnersListRef}>
         <div className="spin-wheel-winner-entry">
           <div className="spin-wheel-winner-position spin-wheel-gold">1</div>

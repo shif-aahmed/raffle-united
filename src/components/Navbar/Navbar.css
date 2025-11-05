@@ -160,7 +160,7 @@
 
 .cart-icon {
   position: relative;
-  color: #FFC516;
+  color: #FFC516 !important;
   cursor: pointer;
   transition: color 0.3s ease;
   transform: scale(1.2);

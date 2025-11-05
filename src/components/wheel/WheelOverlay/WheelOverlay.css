@@ -7,7 +7,7 @@
   background: linear-gradient(135deg, #2ecc71, #27ae60);
   color: #fff;
   border: none;
-  border-radius: 30px;
+  border-radius: 6px !important;
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
@@ -26,34 +26,54 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1002;
+  animation: spin-wheel-fadeIn 0.3s ease;
 }
 
 .spin-wheel-overlay-content {
   background: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 550px;
-  width: 90%;
-  max-height: 85vh;
-  position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  margin: 40px 0;
+  border-radius: 0;
+  width: 25rem;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed !important;
+  right: -30rem;
+  transform: none;
+  z-index: 1003;
+  transition: right 0.3s ease;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.spin-wheel-overlay-content::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.spin-wheel-overlay-content.spin-wheel-overlay-open {
+  right: 0.5rem;
+}
+
+@keyframes spin-wheel-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .spin-wheel-overlay-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #eaeaea;
+  border-bottom: 1px solid #eee;
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -68,18 +88,33 @@
 .spin-wheel-close-button {
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: 2rem;
   cursor: pointer;
-  color: #e74c3c;
-  transition: color 0.3s ease;
+  color: #666;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: color 0.2s;
 }
 
 .spin-wheel-close-button:hover {
-  color: #c0392b;
+  color: #000;
 }
 
 .spin-wheel-overlay-body {
-  margin-top: 15px;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.spin-wheel-overlay-body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 h4 {
@@ -222,10 +257,16 @@ h4 {
   border: 2px solid #e0e0e0;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  z-index: 1004;
   max-height: 250px;
   overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
   animation: spin-wheel-dropdown-fadeIn 0.2s ease;
+}
+
+.spin-wheel-dropdown-menu::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 @keyframes spin-wheel-dropdown-fadeIn {

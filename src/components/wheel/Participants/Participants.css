@@ -24,6 +24,12 @@
   transform: none;
   z-index: 1003;
   transition: right 0.3s ease;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.spin-wheel-participants-section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .spin-wheel-participants-section.spin-wheel-participants-open {
@@ -76,6 +82,12 @@
   flex-grow: 1;
   overflow-y: auto;
   padding-right: 5px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.spin-wheel-participants-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .spin-wheel-participant-item {
